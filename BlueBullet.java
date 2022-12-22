@@ -16,6 +16,10 @@ public class BlueBullet extends BluePlane
     {
         // Add your action code here.
         move(4);
+        if(isTouching(RedPlane.class))
+        {
+            removeTouching(RedPlane.class);
+        }
     }
     
     public BlueBullet()

@@ -29,5 +29,6 @@ public class MyWorld extends World
         addObject(redPlane,287,191);
         BluePlane bluePlane = new BluePlane();
         addObject(bluePlane,123,196);
+
     }
 }

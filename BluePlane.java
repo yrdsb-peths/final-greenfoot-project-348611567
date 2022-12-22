@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BluePlane extends Actor
 {
+    SimpleTimer shotTimer = new SimpleTimer();
     /**
      * Act - do whatever the BluePlane wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -34,7 +35,13 @@ public class BluePlane extends Actor
     
     public void shoot()
     {
-        
+        if(shotTimer.millisElapsed() > 500)
+        {
+            BlueBullet bluebullet = new BlueBullet();
+            getWorld().addObject(bluebullet,getX(),getY());
+            bluebullet.setRotation(getRotation());
+            shotTimer.mark();
+        }
     }
     
     public BluePlane()
