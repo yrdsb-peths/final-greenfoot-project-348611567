@@ -1,8 +1,8 @@
 #Greenfoot project file
 class.BlueBullet.image=BluePlaneBullet.png
-class.BluePlane.image=Blue\ plane.png
+class.BluePlane.image=Blue\ Plane.png
 class.RedBullet.image=RedPlaneBullet.png
-class.RedPlane.image=Red\ plane.png
+class.RedPlane.image=Red\ Plane.png
 dependency1.from=MyWorld
 dependency1.to=RedPlane
 dependency1.type=UsesDependency
@@ -11,7 +11,7 @@ dependency2.to=BluePlane
 dependency2.type=UsesDependency
 editor.fx.0.height=830
 editor.fx.0.width=780
-editor.fx.0.x=761
+editor.fx.0.x=760
 editor.fx.0.y=0
 height=830
 package.numDependencies=2

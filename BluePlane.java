@@ -23,12 +23,13 @@ public class BluePlane extends Actor
     {
         if(Greenfoot.isKeyDown("Left"))
         {
-            setRotation(getRotation() + 2);
+            setRotation(getRotation() - 2);
         }
         if(Greenfoot.isKeyDown("Right"))
         {
-            setRotation(getRotation() - 2);
+            setRotation(getRotation() + 2);
         }
+        move(1);
     }
     
     public void shoot()

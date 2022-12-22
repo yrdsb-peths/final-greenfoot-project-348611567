@@ -22,12 +22,13 @@ public class RedPlane extends Actor
     {
         if(Greenfoot.isKeyDown("A"))
         {
-            setRotation(getRotation() + 2);
+            setRotation(getRotation() - 2);
         }
         if(Greenfoot.isKeyDown("D"))
         {
-            setRotation(getRotation() - 2);
+            setRotation(getRotation() + 2);
         }
+        move(1);
     }
     
     public RedPlane()
