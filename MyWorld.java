@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Main game world (Where players fight)
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Timothy Wong
+ * 2022-12-19
  */
 public class MyWorld extends World
 {
@@ -17,6 +17,9 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(400, 400, 1);
+        GreenfootImage image = getBackground();
+        image.scale(425, 425);
+        setBackground(image);
         prepare();
     }
     /**
