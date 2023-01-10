@@ -8,7 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    public int redLife = 3;
+    Counter redLifeCounter;
+    
+    public int blueLife = 3;
+    Counter blueLifeCounter;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -22,6 +26,7 @@ public class MyWorld extends World
         setBackground(image);
         prepare();
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -33,5 +38,48 @@ public class MyWorld extends World
         BluePlane bluePlane = new BluePlane();
         addObject(bluePlane,123,196);
 
+        redLifeCounter = new Counter();
+        redLifeCounter.setValue(redLife);
+        addObject(redLifeCounter,340,25);
+        
+        blueLifeCounter = new Counter();
+        blueLifeCounter.setValue(blueLife);
+        addObject(blueLifeCounter,60,25);
+    }
+    
+    //destroy red plane and update the counter if there are more lives
+    public void killRed()
+    {
+        redLife--;
+        if(redLife < 0)
+        {
+            redLife = 0;
+        }
+        redLifeCounter.setValue(redLife);
+    }
+    
+    //create another red plane
+    public void createRed()
+    {
+        RedPlane redPlane = new RedPlane();
+        addObject(redPlane,287,191);
+    }
+    
+    //destroy blue plane and update the counter if there are more lives
+    public void killBlue()
+    {
+        blueLife--;
+        if(blueLife < 0)
+        {
+            blueLife = 0;
+        }
+        blueLifeCounter.setValue(blueLife);
+    }
+    
+    //create another red plane
+    public void createBlue()
+    {
+        BluePlane bluePlane = new BluePlane();
+        addObject(bluePlane,123,196);
     }
 }

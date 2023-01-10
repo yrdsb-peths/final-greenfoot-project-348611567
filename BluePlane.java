@@ -46,9 +46,9 @@ public class BluePlane extends Actor
     public void shoot()
     {
         //shoots a bluebullet every half second
-        blueShootingSound.play();
         if(shotTimer.millisElapsed() > 500)
         {
+            blueShootingSound.play();
             BlueBullet bluebullet = new BlueBullet();
             getWorld().addObject(bluebullet,getX(),getY());
             bluebullet.setRotation(getRotation());

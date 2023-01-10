@@ -19,8 +19,16 @@ public class RedBullet extends RedPlane
         move(4);
         if(isTouching(BluePlane.class))
         {
-            removeTouching(BluePlane.class);
+            //destroy redplane if they collide, take away a life from blue
+            // plane and create a new one if there are more lives
             redExplosion.play();
+            removeTouching(BluePlane.class);
+            MyWorld world = (MyWorld) getWorld();
+            if(world.blueLife > 0)
+            {
+                world.createBlue();
+            }
+            world.killBlue();
         }
         MyWorld world = (MyWorld) getWorld();
         if(isAtEdge())
