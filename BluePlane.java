@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BluePlane extends Actor
 {
-    GreenfootSound blueShootingSound = new GreenfootSound("mixkit-short-laser-gun-shot.wav");
+    GreenfootSound blueShootingSound = new GreenfootSound("shooting_sound-copy.wav");
     SimpleTimer shotTimer = new SimpleTimer();
     int n = 0;
     /**
@@ -26,7 +26,12 @@ public class BluePlane extends Actor
             i++;
         }
         move();
-        shoot();
+        if(shotTimer.millisElapsed() > 500)
+        {
+            blueShootingSound.stop();
+            blueShootingSound.play();
+            shoot();
+        }
     }
     
     public void move()
@@ -46,14 +51,10 @@ public class BluePlane extends Actor
     public void shoot()
     {
         //shoots a bluebullet every half second
-        if(shotTimer.millisElapsed() > 500)
-        {
-            blueShootingSound.play();
             BlueBullet bluebullet = new BlueBullet();
             getWorld().addObject(bluebullet,getX(),getY());
             bluebullet.setRotation(getRotation());
             shotTimer.mark();
-        }
     }
     
     public BluePlane()
