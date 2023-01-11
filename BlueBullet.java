@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * Timothy Wong
  * 2022-12-23
  */
-public class BlueBullet extends BluePlane
+public class BlueBullet extends Actor
 {
     /**
      * Act - do whatever the BlueBullet wants to do. This method is called whenever
