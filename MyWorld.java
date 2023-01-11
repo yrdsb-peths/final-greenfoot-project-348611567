@@ -13,6 +13,9 @@ public class MyWorld extends World
     
     public int blueLife = 3;
     Counter blueLifeCounter;
+    
+    public boolean redLose = false;
+    public boolean blueLose = false;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -36,7 +39,7 @@ public class MyWorld extends World
         RedPlane redPlane = new RedPlane();
         addObject(redPlane,287,191);
         BluePlane bluePlane = new BluePlane();
-        addObject(bluePlane,123,196);
+        addObject(bluePlane,123,191);
 
         redLifeCounter = new Counter();
         redLifeCounter.setValue(redLife);
@@ -54,6 +57,7 @@ public class MyWorld extends World
         if(redLife < 0)
         {
             redLife = 0;
+            redLose = true;
         }
         redLifeCounter.setValue(redLife);
     }
@@ -72,6 +76,7 @@ public class MyWorld extends World
         if(blueLife < 0)
         {
             blueLife = 0;
+            blueLose = true;
         }
         blueLifeCounter.setValue(blueLife);
     }
