@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleWorld extends World
 {
-
     /**
      * Constructor for objects of class TitleWorld.
      * 
@@ -25,10 +24,10 @@ public class TitleWorld extends World
     
     public void act()
     {
+        MyWorld gameWorld = new MyWorld();
         if(Greenfoot.isKeyDown("A") && Greenfoot.isKeyDown("D") && 
         Greenfoot.isKeyDown("Left") && Greenfoot.isKeyDown("Right"))
         {
-            MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
         }
     }

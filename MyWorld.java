@@ -14,15 +14,14 @@ public class MyWorld extends World
     public int blueLife = 3;
     Counter blueLifeCounter;
     
-    public boolean redLose = false;
-    public boolean blueLose = false;
+    EndWorld endWorld = new EndWorld();
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 400x400 cells with a cell size of 1x1 pixels.
         super(400, 400, 1);
         GreenfootImage image = getBackground();
         image.scale(425, 425);
@@ -56,8 +55,8 @@ public class MyWorld extends World
         redLife--;
         if(redLife < 0)
         {
-            redLife = 0;
-            redLose = true;
+            endWorld.blueWin = true;
+            Greenfoot.setWorld(endWorld);
         }
         redLifeCounter.setValue(redLife);
     }
@@ -75,8 +74,8 @@ public class MyWorld extends World
         blueLife--;
         if(blueLife < 0)
         {
-            blueLife = 0;
-            blueLose = true;
+            endWorld.redWin = true;
+            Greenfoot.setWorld(endWorld);
         }
         blueLifeCounter.setValue(blueLife);
     }
