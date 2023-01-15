@@ -10,6 +10,7 @@ public class EndWorld extends World
 {
     boolean redWin = false;
     boolean blueWin = false;
+    boolean prepared = false;
     
     GreenfootSound victorySound = new GreenfootSound("victory_sJDDywi.mp3");
     
@@ -29,7 +30,11 @@ public class EndWorld extends World
     public void act()
     {
         //call prepare in act() in order for it to draw the "Blue wins" or "Red wins"
-        prepare();
+        if (!prepared)
+        {
+            prepare();
+            prepared = true;
+        }
         if(Greenfoot.isKeyDown("Space"))
         {
             MyWorld gameWorld = new MyWorld();
@@ -41,7 +46,7 @@ public class EndWorld extends World
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    private void prepare()
+    public void prepare()
     {
         Label label = new Label("Press space to play again", 30);
         addObject(label,200,260);
@@ -49,6 +54,8 @@ public class EndWorld extends World
         {
             Label label2 = new Label("Blue wins!", 60);
             addObject(label2,200,200);
+            DummyBluePlane dummyblueplane = new DummyBluePlane();
+            addObject(dummyblueplane, 200, 150);
             blueWin = false;
             victorySound.play();
         }
@@ -56,11 +63,12 @@ public class EndWorld extends World
         {
             Label label3 = new Label("Red wins!", 60);
             addObject(label3,200,200);
+            DummyRedPlane dummyredplane = new DummyRedPlane();
+            addObject(dummyredplane, 200, 150);
             redWin = false;
             victorySound.play();
         }
         Explosion explosion = new Explosion();
-        addObject(explosion,200,120);
+        addObject(explosion, 200, 150);
     }
-
 }

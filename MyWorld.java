@@ -56,6 +56,7 @@ public class MyWorld extends World
         if(redLife < 0)
         {
             endWorld.blueWin = true;
+            endWorld.prepare();
             Greenfoot.setWorld(endWorld);
         }
         redLifeCounter.setValue(redLife);
@@ -75,6 +76,7 @@ public class MyWorld extends World
         if(blueLife < 0)
         {
             endWorld.redWin = true;
+            endWorld.prepare();
             Greenfoot.setWorld(endWorld);
         }
         blueLifeCounter.setValue(blueLife);

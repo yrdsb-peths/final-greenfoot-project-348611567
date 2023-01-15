@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Explosion here.
+ * Object class for an explosion animation
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Timothy Wong
+ * 2023-01-12
  */
 public class Explosion extends Actor
 {
@@ -15,7 +15,7 @@ public class Explosion extends Actor
      * Act - do whatever the Explosion wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void Explosion()
+    public Explosion()
     {
         for(int i = 0; i < explosion.length; i++)
         {
@@ -34,7 +34,7 @@ public class Explosion extends Actor
     int imageIndex = 0;
     public void animateExplosion()
     {
-        if(animationTimer.millisElapsed() < 100)
+        if(animationTimer.millisElapsed() < 300)
         {
             return;
         }
@@ -42,6 +42,7 @@ public class Explosion extends Actor
         {
             setImage(explosion[imageIndex]);
             imageIndex = (imageIndex + 1) % explosion.length;
+            animationTimer.mark();
         }
     }
 }

@@ -60,6 +60,7 @@ public class BluePlane extends Actor
     public BluePlane()
     {
         //change size of the blueplane
+        setImage(new GreenfootImage("images/Blue Plane.png"));
         GreenfootImage image = getImage();
         image.scale(30, 30);
         setImage(image);
